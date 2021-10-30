@@ -39,22 +39,22 @@ def get_data():
             data = work_data.decode(result['encoding'])
 
     regular_prod = re.compile(r'Изготовитель системы:\s*\S*')
-    regular_name = re.compile(r'Название ОС:\s*\S*')
+    regular_name = re.compile(r'Windows\s*\S*')
     regular_code = re.compile(r'Код продукта:\s*\S*')
     regular_type = re.compile(r'Тип системы:\s*\S*')
 
     os_prod_list.append(regular_prod.findall(data)[0].split()[2])
-    os_name_list.append(regular_name.findall(data)[0].split()[2])
+    os_name_list.append(regular_name.findall(data)[0])
     os_code_list.append(regular_code.findall(data)[0].split()[2])
     os_type_list.append(regular_type.findall(data)[0].split()[2])
 
     heads = ['Изготовитель системы', 'Название ОС', 'Код продукта', 'Тип системы']
     main_data.append(heads)
 
-    work_date = [os_prod_list, os_name_list, os_code_list, os_type_list]
+    work_data = [os_prod_list, os_name_list, os_code_list, os_type_list]
 
-    for num in range(len(work_date[0])):
-        work_row = list(map(lambda row: row[num], work_date))
+    for num in range(len(work_data[0])):
+        work_row = list(map(lambda row: row[num], work_data))
         main_data.append(work_row)
 
     return main_data
