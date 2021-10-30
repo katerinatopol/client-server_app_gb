@@ -18,7 +18,6 @@ c. Проверить работу программы через вызов фу
 """
 import csv
 import re
-
 import chardet
 
 
@@ -38,15 +37,15 @@ def get_data():
             result = chardet.detect(work_data)
             data = work_data.decode(result['encoding'])
 
-    regular_prod = re.compile(r'Изготовитель системы:\s*\S*')
-    regular_name = re.compile(r'Windows\s*\S*')
-    regular_code = re.compile(r'Код продукта:\s*\S*')
-    regular_type = re.compile(r'Тип системы:\s*\S*')
+            regular_prod = re.compile(r'Изготовитель системы:\s*\S*')
+            regular_name = re.compile(r'Windows\s\S*')
+            regular_code = re.compile(r'Код продукта:\s*\S*')
+            regular_type = re.compile(r'Тип системы:\s*\S*')
 
-    os_prod_list.append(regular_prod.findall(data)[0].split()[2])
-    os_name_list.append(regular_name.findall(data)[0])
-    os_code_list.append(regular_code.findall(data)[0].split()[2])
-    os_type_list.append(regular_type.findall(data)[0].split()[2])
+            os_prod_list.append(regular_prod.findall(data)[0].split()[2])
+            os_name_list.append(regular_name.findall(data)[0])
+            os_code_list.append(regular_code.findall(data)[0].split()[2])
+            os_type_list.append(regular_type.findall(data)[0].split()[2])
 
     heads = ['Изготовитель системы', 'Название ОС', 'Код продукта', 'Тип системы']
     main_data.append(heads)
