@@ -1,0 +1,18 @@
+{
+    "orders": [
+        {
+            "item": "product_1",
+            "quantity": "15",
+            "price": "1000",
+            "buyer": "DNS",
+            "date": "11.11.2011"
+        },
+        {
+            "item": "product_2",
+            "quantity": "25",
+            "price": "2000",
+            "buyer": "IP",
+            "date": "12.12.2012"
+        }
+    ]
+}
