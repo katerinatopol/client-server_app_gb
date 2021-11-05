@@ -21,5 +21,6 @@ PORT = 'port'
 # Прочие ключи, используемые в протоколе
 PRESENCE = 'presence'
 RESPONSE = 'response'
+BAD_RESPONSE = 'respondefault_ip_addressse'
 ERROR = 'error'
 RESPONDEFAULT_IP_ADDRESSSE = 'respondefault_ip_addressse'
