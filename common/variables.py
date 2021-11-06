@@ -1,5 +1,7 @@
 """Константы"""
 
+import logging
+
 # Порт поумолчанию для сетевого ваимодействия
 DEFAULT_PORT = 7777
 # IP адрес по умолчанию для подключения клиента
@@ -24,3 +26,6 @@ RESPONSE = 'response'
 BAD_RESPONSE = 'respondefault_ip_addressse'
 ERROR = 'error'
 RESPONDEFAULT_IP_ADDRESSSE = 'respondefault_ip_addressse'
+
+# Текущий уровень логирования
+LOGGING_LEVEL = logging.DEBUG
