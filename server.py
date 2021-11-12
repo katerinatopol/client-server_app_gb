@@ -1,5 +1,6 @@
 """Программа-сервер"""
 import logging
+from decos import logger
 import socket
 import sys
 import json
@@ -11,6 +12,7 @@ from common.utils import get_message, send_message
 SERVER_LOG = logging.getLogger('server')
 
 
+@logger
 def check_message(message):
     """
     Обработчик сообщений от клиентов, принимает словарь -

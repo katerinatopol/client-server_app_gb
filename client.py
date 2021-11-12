@@ -6,6 +6,7 @@ import socket
 import time
 import logging
 import log.client_log_config
+from decos import logger
 from common.variables import ACTION, PRESENCE, TIME, USER, ACCOUNT_NAME, \
     RESPONSE, ERROR, DEFAULT_IP_ADDRESS, DEFAULT_PORT, PORT
 from common.utils import get_message, send_message
@@ -14,6 +15,7 @@ from errors import ReqFieldMissingError
 CLIENT_LOG = logging.getLogger('client')
 
 
+@logger
 def generate_request(server_port=DEFAULT_PORT, account_name='test_user'):
     """ Функция генерирует запрос о присутствии клиента """
 
@@ -30,6 +32,7 @@ def generate_request(server_port=DEFAULT_PORT, account_name='test_user'):
     return request
 
 
+@logger
 def parse_request(message):
     """ Функция разбирает ответ сервера """
     CLIENT_LOG.debug(f'Разбор сообщения от сервера: {message}')

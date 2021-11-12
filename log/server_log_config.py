@@ -22,12 +22,14 @@ STREAM_HANDLER.setFormatter(SERVER_FORMATTER)
 STREAM_HANDLER.setLevel(logging.ERROR)
 LOG_FILE = logging.handlers.TimedRotatingFileHandler(PATH, encoding='utf8', interval=1, when='S')
 LOG_FILE.setFormatter(SERVER_FORMATTER)
+LOG_FILE.close()
 
 # создаём регистратор и настраиваем его
 LOGGER = logging.getLogger('server')
 LOGGER.addHandler(STREAM_HANDLER)
 LOGGER.addHandler(LOG_FILE)
 LOGGER.setLevel(LOGGING_LEVEL)
+
 
 # отладка
 if __name__ == '__main__':
